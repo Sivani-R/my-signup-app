@@ -5,7 +5,10 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f4f7;
+    background-image: url('https://img.freepik.com/premium-photo/yellow-daffodils-background-blank-space_1212840-317.jpg?w=1060');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
   }
   
   .user-info {
@@ -15,9 +18,19 @@
     max-width: 400px;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
   }
   
   .user-info p {
     margin: 10px 0;
   }
   
+  .logout-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    color: white;
+    height: 30px;
+    margin-top: 15px;
+  }

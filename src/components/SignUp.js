@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './SignUp.css';
 
 const SignUp = () => {
   const [user_firstname, setFirstName] = useState('');
@@ -9,20 +10,20 @@ const SignUp = () => {
   const [user_password, setPassword] = useState('');
   const [user_phone, setPhone] = useState('');
   const [user_city, setCity] = useState('');
-  const [user_zipcode, setZipCode] = useState('');
+  const [user_zipcode, setZipcode] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://syoft.dev/Api/userlogin/api/userregister', {
+      const response = await axios.post('https://syoft.dev/Api/user_registeration/api/user_registeration', {
         user_firstname,
         user_lastname,
         user_email,
         user_password,
         user_phone,
         user_city,
-        user_zipcode
+        user_zipcode,
       });
       localStorage.setItem('user', JSON.stringify(response.data));
       navigate('/dashboard');
@@ -41,7 +42,7 @@ const SignUp = () => {
         <input type="password" name="user_password" placeholder="Password" value={user_password} onChange={(e) => setPassword(e.target.value)} required />
         <input type="text" name="user_phone" placeholder="Phone" value={user_phone} onChange={(e) => setPhone(e.target.value)} required />
         <input type="text" name="user_city" placeholder="City" value={user_city} onChange={(e) => setCity(e.target.value)} required />
-        <input type="text" name="user_zipcode" placeholder="Zip Code" value={user_zipcode} onChange={(e) => setZipCode(e.target.value)} required />
+        <input type="text" name="user_zipcode" placeholder="Zipcode" value={user_zipcode} onChange={(e) => setZipcode(e.target.value)} required />
         <button type="submit">Sign Up</button>
       </form>
     </div>

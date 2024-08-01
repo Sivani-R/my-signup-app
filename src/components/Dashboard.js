@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Dashboard.css';
 
 const Dashboard = () => {
   const user = JSON.parse(localStorage.getItem('user'));
+  console.log('Retrieved user from localStorage:', user); // Check this log
   const navigate = useNavigate();
 
   const handleLogout = () => {
